@@ -20,6 +20,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+## GITHUB LINK
+
+<https://github.com/rforbiodatascience25/group_26_package>
+
 ## OVERVIEW
 
 The group26molbio package provides a collection of functions for performing basic operations in molecular biology — from DNA/RNA manipulation to sequence analysis. This vignette introduces each function and demonstrates how to use them effectively.
