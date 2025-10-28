@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param sequence the DNA sequence
+#' @param sequence the RNA sequence
 #' @param start starting position
 #'
 #' @returns codons from the sequence

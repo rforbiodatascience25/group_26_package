@@ -1,55 +1,106 @@
 ---
-output: github_document
+title: "Vignette"
+authors:   
+    - "s252641 - Bhavya Gudhka"   
+    - "s215065 - Henrik Servais Janssen Knudsen"   
+    - "s225191 - Dhruva Gajanan Sakhare"   
+    - "s253705 - Lun Suša"   
+    - "s252623 - Felipe Alberto Morales Grimaldo" 
+output: rmarkdown::github_document
+vignette: >
+  %\VignetteIndexEntry{Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
-# group26molbio
+## OVERVIEW
 
-<!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-<!-- badges: end -->
+The group26molbio package provides a collection of functions for performing basic operations in molecular biology — from DNA/RNA manipulation to sequence analysis. This vignette introduces each function and demonstrates how to use them effectively.
 
-The goal of group26molbio is to ...
+## INSTALLATION
 
-## Installation
-
-You can install the development version of group26molbio like so:
-
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```{r}
+devtools::install_github("rforbiodatascience25/group_26_package")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+```{r setup}
 library(group26molbio)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
+```{r}
+devtools::load_all()
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+## Functions
 
-You can also embed plots, for example:
+### randomDna()
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+**Purpose:**\
+Generates a random DNA sequence of a specified length.\
+This is useful for testing, simulations, or teaching exercises where you need arbitrary DNA sequences.
+
+**Usage:**
+
+```{r}
+inputSize <- 12
+dnaString <- randomDna(inputSize)
+dnaString
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+### dnaToRna()
+
+**Purpose:**\
+Converts a DNA sequence into its corresponding RNA sequence by replacing all thymine (`T`) nucleotides with uracil (`U`).\
+This is useful for simulating transcription or preparing sequences for RNA analysis.
+
+**Usage:**
+
+```{r}
+rnaString <- dnaToRna(dnaString)
+rnaString
+```
+
+### sequenceToCodons()
+
+**Purpose:**\
+Splits a RNA sequence into codons (3-base groups) starting from a given position defaulting at position 1.
+
+```{r}
+codons <- sequenceToCodons(rnaString)
+```
+
+### proteinTraduction()
+
+**Purpose:**\
+Translates a vector of codons into the corresponding protein sequence (amino acids).
+
+**Usage:**
+
+```{r}
+aminoAcidString <- proteinTraduction(codons)
+aminoAcidString
+```
+
+### aminoAcidsPlot()
+
+**Purpose:**\
+Generates a bar plot showing the frequency of each unique amino acid in a protein sequence.
+
+**Usage:**
+
+```{r}
+aminoAcidsPlot(aminoAcidString)
+```
+
+
+## Future development
+
+This package can be further expanded to include Motif Detection i.e. finding recurring amino acid patterns or conserved regions in sequences to find potential functional elements. The ploting can be extended to include multiple sequences to generate logo plots.
+

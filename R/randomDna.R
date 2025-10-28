@@ -1,4 +1,4 @@
-#' Rnadom DNA Sample
+#' Random DNA Sample
 #'
 #' @param inputSize Int, input size for desired DNA random sample
 #'
