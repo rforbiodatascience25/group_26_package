@@ -1,11 +1,19 @@
 ---
 title: "Vignette"
+authors:   
+    - "s252641 - Bhavya Gudhka"   
+    - "s215065 - Henrik Servais Janssen Knudsen"   
+    - "s225191 - Dhruva Gajanan Sakhare"   
+    - "s253705 - Lun Suša"   
+    - "s252623 - Felipe Alberto Morales Grimaldo" 
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -17,3 +25,14 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(group26molbio)
 ```
+
+## OVERVIEW 
+
+The group26molbio package provides a collection of functions for performing basic operations in molecular biology — from DNA/RNA manipulation to sequence analysis. This vignette introduces each function and demonstrates how to use them effectively.
+
+## INSTALLATION
+
+```{r}
+remotes::install_github("rforbiodatascience25/group_26_package")
+```
+
