@@ -1,0 +1,35 @@
+Package: group26molbio
+Type: Package
+Title: Central Dogma of Molecular Biology (Replacement)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Lun", "Susa",
+      email = "s253705@dtu.dk",
+      role = c("aut", "cre")
+    ),
+    person(
+    "Felipe", "Grimaldo",
+    email = "s252623@dtu.dk",
+    role = "aut"
+    ),
+    person(
+    "Bhavya", "Gudhka",
+    email = "s252641@dtu.dk",
+    role = "aut"
+    ),
+    person(
+    "Dhurva", "Sakhare",
+    email = "s225191@dtu.dk",
+    role = "aut"
+    )
+  )
+Description: More about what it does (maybe more than one line).
+    Continuation lines should be indented.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
